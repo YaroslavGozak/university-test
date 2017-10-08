@@ -38,7 +38,7 @@ padding-bottom: 15px;
 }
 md-list-item:hover
 {
-	background-color: lightgoldenrodyellow;
+	background-color: lightpink;
 }
 .tests_list
 {
@@ -46,5 +46,5 @@ md-list-item:hover
 }
 .active
 {
-	background-color: lightpink;
+	background-color: #ffe066;
 }
