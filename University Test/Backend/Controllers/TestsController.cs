@@ -13,20 +13,24 @@ namespace University_Test.Controllers
   [Route("api/Tests")]
   public class TestsController : Controller
   {
+    private TestService testService;
+
+    public TestsController()
+    {
+      testService = new TestService();
+    }
     // GET: api/Tests
     [HttpGet]
     public IEnumerable<Test> Get()
     {
-      var testService = new TestService();
-      var tests = testService.GetAllTests();
-      return tests;
+      return testService.GetAllTests();
     }
 
     // GET: api/Tests/5
     [HttpGet("{id}", Name = "Get")]
-    public string Get(int id)
+    public Test Get(int id)
     {
-      return "value";
+      return testService.GetTest(id);
     }
 
     // POST: api/Tests
