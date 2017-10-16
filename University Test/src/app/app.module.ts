@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TestCardComponent } from './test-card/test-card.component';
 import {MatCardModule,MatRadioModule,MatButtonModule} from '@angular/material';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+	HttpClientModule,
 	MatCardModule,
 	MatRadioModule,
 	MatButtonModule

@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestCardComponent implements OnInit {
 
-  constructor() { }
+  results: string[];
+	constructor() { }
 
   ngOnInit() {
   }
