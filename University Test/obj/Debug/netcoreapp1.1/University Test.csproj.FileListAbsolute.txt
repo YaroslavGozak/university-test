@@ -8,3 +8,14 @@ C:\Users\yaros\source\repos\university-test\University Test\obj\Debug\netcoreapp
 C:\Users\yaros\source\repos\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.AssemblyInfo.cs
 C:\Users\yaros\source\repos\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.dll
 C:\Users\yaros\source\repos\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.pdb
+D:\U\UnivTest\university-test\University Test\bin\Debug\netcoreapp1.1\University Test.deps.json
+D:\U\UnivTest\university-test\University Test\bin\Debug\netcoreapp1.1\University Test.runtimeconfig.json
+D:\U\UnivTest\university-test\University Test\bin\Debug\netcoreapp1.1\University Test.runtimeconfig.dev.json
+D:\U\UnivTest\university-test\University Test\bin\Debug\netcoreapp1.1\University Test.dll
+D:\U\UnivTest\university-test\University Test\bin\Debug\netcoreapp1.1\University Test.pdb
+D:\U\UnivTest\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.csprojResolveAssemblyReference.cache
+D:\U\UnivTest\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.csproj.CoreCompileInputs.cache
+D:\U\UnivTest\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.AssemblyInfoInputs.cache
+D:\U\UnivTest\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.AssemblyInfo.cs
+D:\U\UnivTest\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.dll
+D:\U\UnivTest\university-test\University Test\obj\Debug\netcoreapp1.1\University Test.pdb
