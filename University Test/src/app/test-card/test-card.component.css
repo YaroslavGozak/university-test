@@ -11,6 +11,7 @@ md-card{display: inline-block;vertical-align: top;margin-right: 2%;}
 md-radio-button
 {
 	padding-top: 20px;
+	word-break: break-all;
 }
 button
 {
