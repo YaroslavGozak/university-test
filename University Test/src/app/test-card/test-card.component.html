@@ -7,5 +7,7 @@
 	<button md-button (click)="finishTest()" *ngIf="currentQuestion==selectedTest.questions.length-1">Finish</button>
 	
 </md-card>
-<md-card class="time_elapsed">Time elapsed:<br><span class="time">2:15:13</span></md-card>
+ <h1 class="timer" *ngIf="selectedTest">
+            {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
+        </h1>
 

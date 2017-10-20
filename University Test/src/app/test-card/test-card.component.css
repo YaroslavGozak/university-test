@@ -8,6 +8,12 @@ md-card{display: inline-block;vertical-align: top;margin-right: 2%;}
 	width: 15%;
 	text-align: center;
 }
+.timer
+{
+	color: #57acec;
+	display: inline-block;
+    text-align: center; 
+}
 md-radio-button
 {
 	padding-top: 20px;
