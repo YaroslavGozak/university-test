@@ -27,10 +27,10 @@ export class TestsService {
 	{ questionID : 3, questionText : 'Where is the sun?', points : 1, answers : this.answers2}
     ]
      private tests = [
-      { testID: 0,  testName: 'Yulia', estimatedTime: 20, questions: this.questions},
-      { testID: 1,  testName: 'Yaroslav',  estimatedTime: 20},
-      { testID: 2,  testName: 'Dasha', estimatedTime: 20},
-      { testID: 3,  testName: 'Nick',  estimatedTime: 20}
+      { testID: 1,  testName: 'Yulia', estimatedTime: 20, questions: this.questions},
+      { testID: 2,  testName: 'Yaroslav',  estimatedTime: 20},
+      { testID: 3,  testName: 'Dasha', estimatedTime: 20},
+      { testID: 4,  testName: 'Nick',  estimatedTime: 20}
     ];
 	private test = { testID: 0,  testName: 'Yulia', estimatedTime: 20, questions: this.questions};
     
@@ -55,10 +55,10 @@ export class TestsService {
 	{ questionID : 3, questionText : 'Where is the sun?', points : 1, answers : this.answers2}
     ]
      this.tests = [
-      { testID: 0,  testName: 'Yulia', estimatedTime: 20, questions: this.questions},
-      { testID: 0,  testName: 'Yaroslav',  estimatedTime: 20},
-      { testID: 0,  testName: 'Dasha', estimatedTime: 20},
-      { testID: 0,  testName: 'Nick',  estimatedTime: 20}
+      { testID: 1,  testName: 'Yulia', estimatedTime: 20, questions: this.questions},
+      { testID: 2,  testName: 'Yaroslav',  estimatedTime: 20},
+      { testID: 3,  testName: 'Dasha', estimatedTime: 20},
+      { testID: 4,  testName: 'Nick',  estimatedTime: 20}
     ];
 	 this.test = { testID: 0,  testName: 'Yulia', estimatedTime: 20, questions: this.questions};
     	return Promise.resolve(this.tests);
@@ -83,13 +83,8 @@ export class TestsService {
 	{ questionID : 2, questionText : 'What is Exigo?', points : 2, answers : this.answers2},
 	{ questionID : 3, questionText : 'Where is the sun?', points : 1, answers : this.answers2}
     ]
-     this.tests = [
-      { testID: 0,  testName: 'Yulia', estimatedTime: 20, questions: this.questions},
-      { testID: 0,  testName: 'Yaroslav',  estimatedTime: 20},
-      { testID: 0,  testName: 'Dasha', estimatedTime: 20},
-      { testID: 0,  testName: 'Nick',  estimatedTime: 20}
-    ];
-	 this.test = { testID: 0,  testName: 'Yulia', estimatedTime: 20, questions: this.questions};
+
+	 this.test = { testID: 0,  testName: 'Yulia', estimatedTime:  +20, questions: this.questions};
         return Promise.resolve(this.test);           
     }
 }
