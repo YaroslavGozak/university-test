@@ -1,14 +1,27 @@
 
-<md-card class="questions" *ngIf="selectedTest">
-	<span >{{selectedTest.questions[currentQuestion].questionText}}</span><br>
-	<md-radio-button  *ngFor="let answer of selectedTest.questions[currentQuestion].answers" class="testvariant">{{answer.answerText}}</md-radio-button><br/>
-	<button md-button (click)="previousQuestion()" [disabled]="currentQuestion==0">Previous</button>	
-	<button md-button (click)="nextQuestion()" *ngIf="currentQuestion<selectedTest.questions.length-1">Next</button>
-	<button md-button (click)="finishTest()" *ngIf="currentQuestion==selectedTest.questions.length-1">Finish</button>
-	
-</md-card>
- <h1>
-            {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
-        </h1>
+  <div *ngIf="selectedTest">
+    <div class="questions col-sm-9">
+      <span><h1>{{selectedTest.questions[currentQuestion].questionText}}</h1></span><br>
+      <div *ngFor="let answer of selectedTest.questions[currentQuestion].answers">
+        <input type="radio" class="testvariant" (click)="selectAnswer(answer.answerID)" name="{{selectedTest.questions[currentQuestion].questionID}}" value="answer.answerID" />
+        <label for="selectedTest.questions[currentQuestion].questionID">  {{answer.answerText}} </label>
+        <br />
+      </div>
+      <button class="btn btn-default col-sm-2" (click)="previousQuestion()" [disabled]="currentQuestion==0">Previous</button>
+      <button class="btn btn-success col-sm-2 col-sm-offset-6" (click)="nextQuestion()" *ngIf="currentQuestion<selectedTest.questions.length-1">Next</button>
+      <button class="btn btn-success col-sm-2 col-sm-offset-6" (click)="finishTest()" data-toggle="modal" data-target="#myModal" *ngIf="currentQuestion==selectedTest.questions.length-1">Finish</button>
+    </div>
+    <div class="col-sm-3">
+      <h1>
+        {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br />
+      </h1>
+    </div>
+
+</div>
+<popup #summary>
+
+</popup>
+
+
 
 

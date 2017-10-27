@@ -1,8 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<md-card class="tests_list">
+<!--<md-card class="tests_list">
 <md-list>
   <md-list-item *ngFor="let test of tests"  (click)="selectTest(test)"><a routerLink="/test/:{{test.testID}}" routerLinkActive="active">{{test.testName}}</a></md-list-item>
 </md-list>
-</md-card>
- 
-<router-outlet></router-outlet>
+</md-card>-->
+<header> Site in test-mode
+  <hr/>
+</header>
+<div class="container">
+  <div class="list-group col-sm-3">
+    <a href="/test/{{test.testID}}"  *ngFor="let test of tests" class="list-group-item">{{test.testName}}</a>
+  </div>
+  <router-outlet class="col-sm-9"></router-outlet>
+</div>
