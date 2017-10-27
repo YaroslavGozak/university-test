@@ -1,0 +1,33 @@
+md-card{display: inline-block;vertical-align: top;margin-right: 2%;}
+.questions
+{
+	width: 50%;	
+}
+md-list
+{
+	list-style: none;
+
+}
+md-list-item
+{
+	display: list-item;
+padding: 30px;
+padding-bottom: 15px;
+	padding-top: 15px;
+}
+md-list-item:hover
+{
+	background-color: lightpink;
+}
+.tests_list
+{
+	padding: 0;
+}
+.active
+{
+	background-color: #ffe066;
+}
+header{
+  background-color:lavenderblush;
+  text-align:center;
+}

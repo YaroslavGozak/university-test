@@ -40,3 +40,21 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+{
+    "version": "0.1.0",
+    "command": "mcs",
+    "args": [
+        "-debug",
+        "Program.cs"
+    ],  
+    "showOutput": "silent",
+    "taskSelector": "/t:",
+    "tasks": [
+        {
+            "taskName": "build",
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
