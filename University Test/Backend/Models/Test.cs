@@ -10,5 +10,6 @@ namespace University_Test.Models
     public int TestID { get; set; }
     public string TestName { get; set; }
     public DateTime CreatedDate { get; set; }
+    public IList<Question> Questions { get; set; }
   }
 }
