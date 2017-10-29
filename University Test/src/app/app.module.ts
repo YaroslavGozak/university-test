@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 //import { HttpClientModule } from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import { TestsService } from './services/tests.service';
+import { ResultComponent } from './result/result.component';
+import { LoginComponent } from './login/login.component';
+import {MatInputModule} from '@angular/material';
 const appRoutes: Routes = [
   {
     path: 'test/:id',
@@ -18,7 +21,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TestCardComponent
+    TestCardComponent,
+    ResultComponent,
+    LoginComponent
   ],
   imports: [ 
 	     RouterModule.forRoot(
@@ -27,7 +32,8 @@ const appRoutes: Routes = [
     BrowserModule,	
 	MatCardModule,
 	MatRadioModule,
-	MatButtonModule
+	MatButtonModule,
+	MatInputModule
   ],
   providers: [TestsService, HttpModule],
   bootstrap: [AppComponent]

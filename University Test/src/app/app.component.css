@@ -10,15 +10,16 @@ md-list
 }
 md-list-item
 {
-	display: list-item;
+display: block; 
 padding: 30px;
 padding-bottom: 15px;
-	padding-top: 15px;
+padding-top: 15px;
 }
 md-list-item:hover
 {
 	background-color: lightpink;
 }
+
 .tests_list
 {
 	padding: 0;
@@ -26,4 +27,15 @@ md-list-item:hover
 .active
 {
 	background-color: #ffe066;
+	display: block;
+	text-decoration: none;
+}
+.test
+{
+	display: block;
+	position: relative;
+	text-decoration: none;
+	color: black;	
+	margin: 0;
+	padding: 0;
 }

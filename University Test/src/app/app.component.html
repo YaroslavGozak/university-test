@@ -1,8 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <md-card class="tests_list">
 <md-list>
-  <md-list-item *ngFor="let test of tests"  (click)="selectTest(test)"><a routerLink="/test/:{{test.testID}}" routerLinkActive="active">{{test.testName}}</a></md-list-item>
+  <md-list-item *ngFor="let test of tests"  (click)="selectTest(test)"><a class="test" routerLink="/test/:{{test.testID}}" routerLinkActive="active">{{test.testName}}</a></md-list-item>
 </md-list>
 </md-card>
  
 <router-outlet></router-outlet>
+
+
+

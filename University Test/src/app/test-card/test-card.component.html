@@ -1,14 +1,16 @@
 
 <md-card class="questions" *ngIf="selectedTest">
-	<span >{{selectedTest.questions[currentQuestion].questionText}}</span><br>
-	<md-radio-button  *ngFor="let answer of selectedTest.questions[currentQuestion].answers" class="testvariant">{{answer.answerText}}</md-radio-button><br/>
+	<span class="question">{{selectedTest.questions[currentQuestion].questionText}}</span><br>
+	<md-radio-button  *ngFor="let answer of selectedTest.questions[currentQuestion].answers" class="testvariant">{{answer.answerText}}</md-radio-button>
 	<button md-button (click)="previousQuestion()" [disabled]="currentQuestion==0">Previous</button>	
 	<button md-button (click)="nextQuestion()" *ngIf="currentQuestion<selectedTest.questions.length-1">Next</button>
 	<button md-button (click)="finishTest()" *ngIf="currentQuestion==selectedTest.questions.length-1">Finish</button>
 	
 </md-card>
+<md-card class="timer">
  <h1>
             {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
         </h1>
+</md-card>
 
 

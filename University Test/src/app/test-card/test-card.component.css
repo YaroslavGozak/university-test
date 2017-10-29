@@ -1,8 +1,9 @@
 md-card{display: inline-block;vertical-align: top;margin-right: 2%;}
 .questions
 {
-	width: 50%;	
+	width: 50%;
 }
+a{color: black; text-decoration: none;}
 .time_elapsed
 {
 	width: 15%;
@@ -10,12 +11,14 @@ md-card{display: inline-block;vertical-align: top;margin-right: 2%;}
 }
 .timer
 {
-	color: #57acec;
+
 	display: inline-block;
     text-align: center; 
 }
 md-radio-button
+
 {
+	display: block;
 	padding-top: 20px;
 	word-break: break-all;
 }
@@ -38,10 +41,10 @@ md-list
 }
 md-list-item
 {
-	display: list-item;
+display: list-item;
 padding: 30px;
 padding-bottom: 15px;
-	padding-top: 15px;
+padding-top: 15px;
 }
 md-list-item:hover
 {
@@ -54,4 +57,5 @@ md-list-item:hover
 .active
 {
 	background-color: #ffe066;
+	padding: 50%;
 }
