@@ -54,3 +54,62 @@ md-list-item:hover
 {
 	background-color: #ffe066;
 }
+/* Popup container */
+.popup {
+  position: absolute;
+  display: block;
+}
+
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    background-color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: fixed;
+    z-index: 1;
+    top: 10%;
+    border: 1px solid black;
+    max-height: 80%;
+    overflow: auto;
+  }
+
+  .popup .popuptext .header{
+    text-align: center;
+  }
+    .popup .popuptext .body {
+      position: relative;
+      overflow: auto;
+    }
+
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.footer button {
+  float: right !important;
+}

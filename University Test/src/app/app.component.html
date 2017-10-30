@@ -4,12 +4,35 @@
   <md-list-item *ngFor="let test of tests"  (click)="selectTest(test)"><a routerLink="/test/:{{test.testID}}" routerLinkActive="active">{{test.testName}}</a></md-list-item>
 </md-list>
 </md-card>-->
-<header> Site in test-mode
-  <hr/>
-</header>
+<div class="alert alert-warning">
+  <span style="text-align:center"><strong>Warning!</strong> Site is in test mode.</span>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Pentagon Testing System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
-  <div class="list-group col-sm-3">
+  <div *ngIf="tests" class="list-group col-sm-3">
     <a href="/test/{{test.testID}}"  *ngFor="let test of tests" class="list-group-item">{{test.testName}}</a>
   </div>
   <router-outlet class="col-sm-9"></router-outlet>
+  <!--<div *ngIf="error && error != ''" class="jumbotron">
+    <h1>Oooops!</h1>
+    <p>
+      Looks like we were attacked by alians :( <br />
+      Please call the national guard 
+    </p>
+  </div>-->
 </div>
+<footer>
+    <h1>U.S. Ministry of Defence</h1>
+    <p>
+      Please stand by
+    </p>
+</footer>

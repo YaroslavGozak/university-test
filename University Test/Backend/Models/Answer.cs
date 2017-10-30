@@ -10,6 +10,7 @@ namespace University_Test.Models
     public int AnswerID { get; set; }
     public string AnswerText { get; set; }
     public Question Question { get; set; }
+    public int QuestionID { get; set; }
     public bool IsCorrect { get; set; }
   }
 }

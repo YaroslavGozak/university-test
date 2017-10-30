@@ -1,9 +1,11 @@
 CREATE DATABASE University
 GO
+USE University
 CREATE TABLE Tests(
 	TestID int PRIMARY KEY IDENTITY(1,1),
 	TestName nvarchar(30) NOT NULL,
-	CreatedDate Date DEFAULT GETDATE()
+	CreatedDate Date DEFAULT GETDATE(),
+	EstimatedTime int
 )
 GO
 CREATE TABLE Questions(

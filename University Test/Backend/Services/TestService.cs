@@ -26,51 +26,51 @@ namespace University_Test.Services
     {
       using (var context = Global.Sql())
       {
-        Test test = new Test();
-        var sql = @"SELECT t.TestName 
-		                    ,q.Question AS QuestionText
-		                    ,q.Points
-		                    ,a.Answer AS AnswerText
-		                    ,a.IsCorrect
-                    FROM Tests t
-                    LEFT JOIN Questions q
-                      ON q.TestID = t.TestID
-                    LEFT JOIN Answers a
-                      ON a.QuestionID = q.QuestionID
-                    WHERE t.TestID = @id";
-
-        var result = context.Query<Test, Question, Answer, Test>(sql,
-          (queriedTest, queriedQuestion, queriedAnswer) =>
-          {
-            if (test.TestName == default(string))
-              test.TestName = queriedTest.TestName;
-            if (test.Questions == null)
-              test.Questions = new List<Question>();
-            Question question = null;
-            foreach(var testQuestion in test.Questions)
-            {
-              if(testQuestion.QuestionText == queriedQuestion.QuestionText)
-              {
-                question = testQuestion;
-                break;
-              }
-            }
-            if (question == null)
-            {
-              test.Questions.Add(queriedQuestion);
-              question = queriedQuestion;
-            }
-            if (question.Answers == null)
-              question.Answers = new List<Answer>();
-            if (!question.Answers.Contains(queriedAnswer))
-              question.Answers.Add(queriedAnswer);
-            return test;
-          }, new
-          {
-            id = id
-          },
-          splitOn:"QuestionText,AnswerText").Distinct().ToList();
-        return result.Single();
+        var test = context.Query<Test>(@"
+          SELECT
+            TestID
+            ,TestName
+            ,EstimatedTime
+          FROM
+            Tests
+          WHERE
+            TestID = @testId
+          ", new
+        {
+          testId = id
+        }).FirstOrDefault();
+        if (test == null) return null;
+        var questions = context.Query<Question>(@"
+          SELECT
+            QuestionID
+            ,Question AS QuestionText
+            ,Points
+          FROM
+            Questions
+          WHERE
+            TestID = @testId
+          ", new
+        {
+          testId = id
+        }).Distinct().ToList();
+        var answers = context.Query<Answer>(@"
+          SELECT
+            AnswerID
+            ,Answer AS AnswerText
+            ,IsCorrect
+            ,QuestionID
+          FROM
+            Answers
+          WHERE
+            QuestionID IN @questionIds
+          ", new
+        {
+          questionIds = questions.Select(q => q.QuestionID)
+        });
+        foreach (var question in questions)
+          question.Answers = answers.Where(a => a.QuestionID == question.QuestionID).ToList();
+        test.Questions = questions;
+        return test;
       }
     }
   }

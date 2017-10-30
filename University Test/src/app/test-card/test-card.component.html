@@ -1,5 +1,38 @@
 
-  <div *ngIf="selectedTest">
+  <div *ngIf="selectedTest && selectedTest.questions.length > 0">
+
+    <div class="popup ">
+      <div class="popuptext" id="myPopup">
+        <div class="container">
+          <div class="header">
+            <h2>{{selectedTest.testName}}</h2>          
+          </div>
+          <hr />
+          <div class="body">
+            <h3>Your results</h3>
+            <div>
+              <ul>
+                <li *ngFor="let question of selectedTest.questions">
+                  <h4 class="col-sm-6">Question: {{question.questionText}}</h4>
+                  <div *ngFor="let answer of question.answers" class="col-sm-6 col-sm-offset-6">
+                    <div *ngIf="answer.isCorrect" class="alert alert-success">
+                      <h4>{{answer.answerText}}</h4>
+                    </div>
+                    <div *ngIf="!answer.isCorrect" class="alert alert-danger">
+                      <h4>{{answer.answerText}}</h4>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer">
+            <button class="btn btn-info" (click)="close()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="questions col-sm-9">
       <span><h1>{{selectedTest.questions[currentQuestion].questionText}}</h1></span><br>
       <div *ngFor="let answer of selectedTest.questions[currentQuestion].answers">
@@ -16,12 +49,12 @@
         {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br />
       </h1>
     </div>
-
 </div>
-<popup #summary>
-
-</popup>
-
-
-
-
+<div *ngIf="selectedTest && selectedTest.questions.length == 0" class="col-sm-9">
+  <div class="jumbotron">
+    <h1>No questions!</h1>
+    <p>
+      Test exists but no questions provided
+    </p>
+  </div>
+</div>

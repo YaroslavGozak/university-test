@@ -11,6 +11,7 @@ namespace University_Test.Models
     public string QuestionText { get; set; }
     public int Points { get; set; }
     public Test Test { get; set; }
+    public int TestID { get; set; }
     public IList<Answer> Answers { get; set; }
   }
 }

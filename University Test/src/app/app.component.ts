@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Test, Question, Answer} from './models/main-models';
-import { HttpModule }           from '@angular/http';
+import { Test, Question, Answer } from './models/main-models';
+import { Http } from '@angular/http';
 import { TestsService } from './services/tests.service';
 import { Router } from '@angular/router';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    providers:[Http]
 })
 export class AppComponent implements OnInit {
     private tests: Test[];
@@ -25,4 +26,5 @@ export class AppComponent implements OnInit {
         this.selectedTest = test;
         this.router.navigate(['/test', test.testID]);
     }
+
 }
